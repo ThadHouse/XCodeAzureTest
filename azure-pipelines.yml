@@ -1,0 +1,8 @@
+jobs:
+ - job: Mac
+   pool:
+     vmImage: 'macOS-10.13'
+   steps:
+    - script: |
+        clang ObjCppFile.mm -std=c++14 -stdlib=libc++ -fobjc-arc -g -fPIC -Wall -Wextra -Werror
+      displayName: 'Compile File'
