@@ -1,0 +1,12 @@
+plugins {
+  id 'c'
+  id 'objective-cpp'
+}
+
+
+model {
+  components {
+    myExe(NativeExecutableSpec) {
+    }
+  }
+}

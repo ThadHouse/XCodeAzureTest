@@ -3,6 +3,14 @@ jobs:
    pool:
      vmImage: 'macOS-10.13'
    steps:
-    - script: |
-        clang ObjCppFile.mm -std=c++14 -stdlib=libc++ -fobjc-arc -g -fPIC -Wall -Wextra -Werror
-      displayName: 'Compile File'
+    - task: Gradle@2
+      inputs:
+        workingDirectory: ''
+        gradleWrapperFile: 'gradlew'
+        gradleOptions: '-Xmx3072m'
+        javaHomeOption: 'path'
+        publishJUnitResults: true
+        testResultsFiles: '**/TEST-*.xml'
+        tasks: 'build --info --debug'
+        # checkStyleRunAnalysis: true
+        # pmdRunAnalysis: true
