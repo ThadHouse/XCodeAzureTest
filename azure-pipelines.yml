@@ -17,6 +17,6 @@ jobs:
         # checkStyleRunAnalysis: true
         # pmdRunAnalysis: true
     - script:
-        ls build
+        cat build/tmp/compileMyExeExecutableMyExeObjcpp/options.txt
       displayName: "Print options"
       condition: always()
