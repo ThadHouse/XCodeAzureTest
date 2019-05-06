@@ -16,3 +16,7 @@ jobs:
         tasks: 'build --info --debug'
         # checkStyleRunAnalysis: true
         # pmdRunAnalysis: true
+    - script:
+        ls build
+      displayName: "Print options"
+      condition: always()
